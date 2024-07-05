@@ -15,6 +15,9 @@
 html {
   font-size: 62.5%; /*Esto hace que 1 rem sean 10px*/
   box-sizing: border-box;
+  cursor: crosshair;
+  scrollbar-width: thin; 
+  scrollbar-color: #1073BA #fff;
 }
 
 *, *:before, *:after {
@@ -190,13 +193,24 @@ img {
 .sobre-producto {
   height: 70vh;
   width: 100%;
-  background-image: linear-gradient(to bottom, transparent 50%, var(--primario) 0%), url("../img/imagen-mujer.jpg");
   background-repeat: repeat, no-repeat;
   background-size: cover;
   background-position: right;
   display: flex;
   flex-direction: column-reverse;
   color: var(--blanco);
+}
+
+.notavif.notwebp .sobre-producto {
+  background-image: linear-gradient(to bottom, transparent 50%, var(--primario) 0%), url("../img/imagen-mujer.jpg");
+}
+
+.webp .sobre-producto {
+  background-image: linear-gradient(to bottom, transparent 50%, var(--primario) 0%), url("../img/imagen-mujer.webp");
+}
+
+.avif .sobre-producto{
+  background-image: linear-gradient(to bottom, transparent 50%, var(--primario) 0%), url("../img/imagen-mujer.avif");
 }
 
 .texto-sobre-producto {
@@ -223,8 +237,19 @@ img {
   .sobre-producto {
     height: 60vh;
     max-height: 40rem;
-    background-image: linear-gradient(to right, var(--primario) 50%, transparent 50%), url("../img/imagen-mujer.jpg");
     background-position: right 30%;
+  }
+
+  .notavif.notwebp .sobre-producto {
+    background-image: linear-gradient(to left, transparent 50%, var(--primario) 0%), url("../img/imagen-mujer.jpg");
+  }
+  
+  .webp .sobre-producto {
+    background-image: linear-gradient(to left, transparent 50%, var(--primario) 0%), url("../img/imagen-mujer.webp");
+  }
+  
+  .avif .sobre-producto{
+    background-image: linear-gradient(to left, transparent 50%, var(--primario) 0%), url("../img/imagen-mujer.avif");
   }
 
   .sobre-producto .contenedor {
@@ -350,19 +375,41 @@ img {
 
 /* Formulario */
 .newsletter {
-  margin: var(--separacion) 0;
-  background-image: linear-gradient(to bottom, transparent 50%, var(--blanco) 0%), url("../img/newsletter.jpg");
+  margin: var(--separacion) 0 0 0;
   background-position: center top;
   background-repeat: no-repeat;
   background-size: 100%, 51rem;
 }
 
+.notavif.notwebp .newsletter {
+  background-image: linear-gradient(to bottom, transparent 50%, var(--blanco) 0%), url("../img/newsletter.jpg");
+}
+
+.webp .newsletter {
+  background-image: linear-gradient(to bottom, transparent 50%, var(--blanco) 0%), url("../img/newsletter.webp");
+}
+
+.avif .newsletter {
+  background-image: linear-gradient(to bottom, transparent 50%, var(--blanco) 0%), url("../img/newsletter.avif");
+}
+
 @media (min-width: 768px) {
   .newsletter {
-    background-image: linear-gradient(to right, transparent 50%, var(--blanco) 0%), url("../img/newsletter.jpg");
     background-position: center, -17rem -12rem;
     background-size: 100%, 100rem;
   }
+  .notavif.notwebp .newsletter {
+    background-image: linear-gradient(to right, transparent 50%, var(--blanco) 0%), url("../img/newsletter.jpg");
+  }
+  
+  .webp .newsletter {
+    background-image: linear-gradient(to right, transparent 50%, var(--blanco) 0%), url("../img/newsletter.webp");
+  }
+  
+  .avif .newsletter {
+    background-image: linear-gradient(to right, transparent 50%, var(--blanco) 0%), url("../img/newsletter.avif");
+  }
+
 }
 
 @media (min-width: 2200px) {
@@ -374,7 +421,7 @@ img {
 
 .contenido-newsletter {
   display: grid;
-  grid-template-rows: repeat(2, 30rem);
+  grid-template-rows: repeat(2, 40rem);
   gap: var(--separacion);
 }
 
@@ -419,4 +466,16 @@ img {
   font-size: 2rem;
   font-weight: 900;
   border: none;
+}
+
+/* Footer */
+
+.footer p {
+  font-family: var(--fuentePrincipal);
+  color: var(--primario);
+  font-weight: 900;
+  font-size: 2rem;
+  margin: calc(var(--separacion) / 2) auto;
+  text-transform: uppercase;
+  text-align: center;
 }
